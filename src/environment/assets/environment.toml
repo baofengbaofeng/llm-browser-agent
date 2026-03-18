@@ -1,0 +1,59 @@
+# 服务器配置
+llm_browser_agent.server.debug = true  # 调试模式开关，开发环境启用
+llm_browser_agent.server.port = 8080  # HTTP服务监听端口
+llm_browser_agent.server.shutdown_timeout = 30  # 优雅关闭超时时间，单位秒
+llm_browser_agent.server.database.url = "sqlite://.data/llm_browser_agent.db"  # 数据库文件路径
+llm_browser_agent.server.security.cookie_secret = "0b4c9f0a6e2d4178a93f52d1c7b8e4adf36127c5a0b9482f3d6c1e79b2543a10"  # Cookie加密密钥，生产环境需修改
+
+# 日志配置
+llm_browser_agent.server.logging.level = "DEBUG"  # 日志级别：DEBUG、INFO、WARNING、ERROR
+llm_browser_agent.server.logging.format = "%(asctime)s [%(levelname)s] %(name)s: %(message)s"  # 日志输出格式
+llm_browser_agent.server.logging.dir = "logs"  # 日志文件存放目录，相对路径或绝对路径
+llm_browser_agent.server.logging.rotation.when = "H"  # 滚动策略：S-秒, M-分钟, H-小时, D-天, W-周
+llm_browser_agent.server.logging.rotation.interval = 1  # 滚动间隔，与when配合使用
+llm_browser_agent.server.logging.rotation.backup_count = 168  # 保留日志文件数量，默认保留7天（168小时）
+
+# 客户配置
+llm_browser_agent.customer.cookie_key = "__llm_browser_agent_uid__"  # 客户ID的Cookie键名
+llm_browser_agent.customer.cookie_max_age_days = 365  # 客户Cookie有效期，单位为天
+
+# 大模型配置
+llm_browser_agent.model.name = "glm-5-internal"  # 大语言模型名称标识符
+llm_browser_agent.model.temperature = 0.1  # 采样温度参数，范围0.0-1.0，值越低输出越确定
+llm_browser_agent.model.top_p = 0.9  # 核采样参数，范围0.0-1.0，控制生成文本的多样性
+llm_browser_agent.model.api_url = "http://llm-proxy.intra.xiaojukeji.com"  # 大语言模型API服务地址
+llm_browser_agent.model.api_key = "sk-9RYy41_Gc8bkH2Y8DlETTw"  # API认证密钥，用于访问模型服务
+llm_browser_agent.model.timeout = 300  # LLM请求超时时间，单位为秒
+
+# 智能体配置
+llm_browser_agent.agent.max_actions_per_step = 10  # 单步最大操作数限制
+llm_browser_agent.agent.max_failures = 5  # 最大连续失败次数，超过则终止任务
+llm_browser_agent.agent.step_timeout = 180  # 单步执行超时时间，单位为秒
+llm_browser_agent.agent.calculate_cost = true  # 是否启用API调用成本计算功能
+llm_browser_agent.agent.use_vision = false  # 是否启用视觉能力进行图像理解
+llm_browser_agent.agent.use_thinking = false  # 是否启用思考模式展示推理过程
+llm_browser_agent.agent.fast_mode = false  # 是否启用快速模式，可能降低准确性
+llm_browser_agent.agent.demo_mode = false  # 是否启用演示模式，用于展示场景
+
+# 浏览器配置
+llm_browser_agent.browser.headless = true  # 是否启用无头模式，后台运行不显示窗口
+llm_browser_agent.browser.enable_security = true  # 是否启用浏览器安全功能
+llm_browser_agent.browser.use_sandbox = true  # 是否启用浏览器沙箱模式进行隔离
+llm_browser_agent.browser.window.w_size = 1440  # 浏览器窗口宽度，单位为像素
+llm_browser_agent.browser.window.h_size = 1200  # 浏览器窗口高度，单位为像素
+llm_browser_agent.browser.chrome.args = [  # Chrome浏览器启动参数列表
+    "--ignore-certificate-errors",  # 忽略SSL证书错误
+    "--ignore-certificate-errors-spki-list",  # 忽略证书SPKI列表
+    "--allow-running-insecure-content",  # 允许混合内容HTTP在HTTPS上
+    "--disable-gpu",  # 禁用GPU硬件加速
+    "--disable-features=AutomationControlled",  # 隐藏自动化检测特征
+    "--incognito"  # 使用无痕浏览模式
+]
+
+llm_browser_agent.browser.dir.userdata = "user"  # 浏览器用户数据目录
+llm_browser_agent.browser.dir.download = "user/download"  # 浏览器默认下载目录
+
+# 任务配置
+llm_browser_agent.task.init_timeout = 30  # 任务初始化超时时间，单位为秒
+llm_browser_agent.task.base_dir = "temp"  # 任务临时文件基础目录
+

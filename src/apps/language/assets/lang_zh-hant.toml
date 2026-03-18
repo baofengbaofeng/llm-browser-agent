@@ -1,0 +1,96 @@
+# Traditional Chinese (繁體中文)
+
+# Base Configuration
+base_model_name = "模型名稱"
+base_model_temperature = "隨機因子"
+base_model_api_url = "呼叫地址"
+base_model_api_key = "呼叫密鑰"
+base_agent_vision = "視覺能力"
+base_agent_max_actions = "單步操作限制"
+base_agent_llm_timeout = "模型超時（秒）"
+base_agent_max_failure = "失敗重試限制"
+base_agent_step_timeout = "單步超時（秒）"
+base_agent_thinking_mode = "思考模式"
+base_agent_fast_mode = "快速模式"
+base_agent_demo_mode = "演示模式"
+base_agent_calculate_cost = "計算成本"
+base_browser_headless_mode = "無頭模式"
+base_browser_security_mode = "安全模式"
+base_browser_chromium_sandbox_mode = "沙箱模式"
+
+# Base Unit Configuration
+base_unit_times = "次"
+base_unit_sec = "秒"
+base_unit_row = "條"
+
+# Base Bool Configuration
+base_bool_y = "是"
+base_bool_n = "否"
+
+# Base Button Configuration
+base_button_exec = "執行"
+base_button_save = "儲存"
+base_button_stop = "終止"
+base_button_insert = "插入"
+base_button_cancel = "取消"
+base_button_affirm = "確認"
+base_button_reset = "重置"
+base_button_close = "關閉"
+
+# Base Modal Configuration
+base_modal_alert_title = "操作提示"
+
+# View Nav Configuration
+view_nav_settings = "執行設定"
+view_nav_language = "切換語言"
+view_nav_config_summary_toggle = "展開/收起配置摘要"
+
+# View Section Configuration
+view_section_task_response = "執行結果"
+view_section_task_planning = "執行計劃"
+view_section_model = "模型配置"
+view_section_agent = "代理配置"
+view_section_browser = "瀏覽器配置"
+
+# View Settings Configuration
+view_settings_toggle_password = "顯示/隱藏密碼"
+view_settings_custom_config_updated_at = "自定義配置更新於"
+view_settings_use_default_config = "使用預設配置"
+view_settings_status_recover_ongoing = "恢復中"
+view_settings_status_recover_success = "已恢復"
+view_settings_button_restore_default = "恢復預設"
+
+# View Task Planning Configuration
+view_task_planning_empty_message = "暫無執行計劃"
+view_task_planning_empty_propose = "點擊儲存添加"
+view_task_planning_status_save_ongoing = "儲存中"
+view_task_planning_status_save_success = "已儲存"
+view_task_planning_modal_head_show = "查看執行計劃"
+view_task_planning_modal_head_save = "儲存執行計劃"
+view_task_planning_modal_task_name = "任務名稱"
+view_task_planning_modal_task_name_placeholder = "不填寫時預設取任務內容前50個字元作為名稱"
+
+# View Task Configuration
+view_task_prompt = "任務描述"
+view_task_placeholder = "請輸入任務執行步驟描述"
+view_task_modal_head_reset_confirm = "確認重置"
+view_task_modal_body_reset_confirm = "確定要清空任務描述嗎？此操作不可恢復"
+
+# View Result Configuration
+view_result_journal_section = "執行日誌"
+view_result_propose_empty = "點擊「執行」按鈕開始執行任務"
+view_result_status_ongoing = "任務執行中"
+view_result_status_success = "任務執行成功"
+view_result_status_failure = "任務執行失敗"
+view_result_status_submitted = "任務已提交"
+view_result_status_canceled = "任務已終止"
+
+# Validation Error Configuration
+validation_error_empty_task = "請先輸入任務描述"
+validation_error_empty_task_content = "請輸入任務描述內容"
+
+# Error Configuration
+error_network = "網路錯誤"
+error_network_with_retry = "網路錯誤，請稍後重試"
+error_task_running_failed = "任務執行失敗"
+error_getting_default_config = "獲取預設配置失敗"

@@ -1,0 +1,39 @@
+error_body_invalid_json = "El cuerpo de la solicitud no es un JSON válido, verifíquelo e inténtelo de nuevo."
+
+error_task_project_invalid_json = "El cuerpo de la solicitud no es un JSON válido, verifíquelo e inténtelo de nuevo."
+error_task_project_missing_digest = "Falta el campo task_digest o está vacío en la solicitud."
+error_task_project_invalid_digest = "El campo task_digest es inválido o supera la longitud permitida."
+error_task_project_missing_prompt = "Falta el campo task_prompt o está vacío en la solicitud."
+error_task_project_invalid_prompt = "El campo task_prompt es inválido o supera la longitud permitida."
+error_task_project_missing_setting = "Falta el campo setting; se requiere un objeto de configuración de la tarea."
+error_task_project_invalid_setting = "El campo setting debe ser un objeto que contenga los campos de configuración de la tarea."
+error_task_project_missing_id = "Falta el id del plan de tarea, no se puede continuar."
+error_task_project_invalid_id = "El id del plan de tarea es inválido; debe ser un número entero positivo."
+
+error_param_page_invalid_value = "El parámetro de paginación page es inválido o está fuera del rango permitido."
+error_param_size_invalid_value = "El parámetro de paginación size es inválido o está fuera del rango permitido."
+error_param_status_invalid_value = "El parámetro de consulta status es inválido o está fuera del rango permitido."
+
+error_setting_model_name = "El campo model_name falta o es inválido."
+error_setting_model_temperature = "El campo model_temperature falta o está fuera del rango 0.0~1.0."
+error_setting_model_top_p = "El campo model_top_p falta o está fuera del rango 0.0~1.0."
+error_setting_model_api_url = "El campo model_api_url falta o supera la longitud permitida."
+error_setting_model_api_key = "El campo model_api_key falta o supera la longitud permitida."
+error_setting_model_timeout = "El campo model_timeout falta o está fuera del rango permitido."
+
+error_setting_agent_use_vision = "El campo agent_use_vision falta o debe ser un valor booleano."
+error_setting_agent_max_actions_per_step = "El campo agent_max_actions_per_step falta o está fuera del rango permitido."
+error_setting_agent_max_failures = "El campo agent_max_failures falta o está fuera del rango permitido."
+error_setting_agent_step_timeout = "El campo agent_step_timeout falta o está fuera del rango permitido."
+error_setting_agent_use_thinking = "El campo agent_use_thinking falta o debe ser un valor booleano."
+error_setting_agent_calculate_cost = "El campo agent_calculate_cost falta o debe ser un valor booleano."
+error_setting_agent_fast_mode = "El campo agent_fast_mode falta o debe ser un valor booleano."
+error_setting_agent_demo_mode = "El campo agent_demo_mode falta o debe ser un valor booleano."
+
+error_setting_browser_headless = "El campo browser_headless falta o debe ser un valor booleano."
+error_setting_browser_enable_security = "El campo browser_enable_security falta o debe ser un valor booleano."
+error_setting_browser_use_sandbox = "El campo browser_use_sandbox falta o debe ser un valor booleano."
+
+error_task_history_invalid_id = "El id del historial de tarea es inválido; debe ser un número entero positivo."
+
+error_internal_error = "Error interno del servidor, inténtelo de nuevo más tarde o contacte al administrador."

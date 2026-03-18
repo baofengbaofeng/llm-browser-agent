@@ -1,0 +1,39 @@
+error_body_invalid_json = "O corpo da requisição não é um JSON válido, verifique e tente novamente."
+
+error_task_project_invalid_json = "O corpo da requisição não é um JSON válido, verifique e tente novamente."
+error_task_project_missing_digest = "Campo task_digest ausente ou vazio na requisição."
+error_task_project_invalid_digest = "Campo task_digest é inválido ou excede o comprimento permitido."
+error_task_project_missing_prompt = "Campo task_prompt ausente ou vazio na requisição."
+error_task_project_invalid_prompt = "Campo task_prompt é inválido ou excede o comprimento permitido."
+error_task_project_missing_setting = "Campo setting ausente; é necessário um objeto de configuração de tarefa."
+error_task_project_invalid_setting = "O campo setting deve ser um objeto contendo os campos de configuração de tarefa."
+error_task_project_missing_id = "Campo id do plano de tarefa ausente, não é possível continuar."
+error_task_project_invalid_id = "O id do plano de tarefa é inválido; ele deve ser um número inteiro positivo."
+
+error_param_page_invalid_value = "O parâmetro de paginação page é inválido ou está fora do intervalo permitido."
+error_param_size_invalid_value = "O parâmetro de paginação size é inválido ou está fora do intervalo permitido."
+error_param_status_invalid_value = "O parâmetro de consulta status é inválido ou está fora do intervalo permitido."
+
+error_setting_model_name = "Campo model_name ausente ou inválido."
+error_setting_model_temperature = "Campo model_temperature ausente ou fora do intervalo 0.0~1.0."
+error_setting_model_top_p = "Campo model_top_p ausente ou fora do intervalo 0.0~1.0."
+error_setting_model_api_url = "Campo model_api_url ausente ou com comprimento acima do permitido."
+error_setting_model_api_key = "Campo model_api_key ausente ou com comprimento acima do permitido."
+error_setting_model_timeout = "Campo model_timeout ausente ou fora do intervalo permitido."
+
+error_setting_agent_use_vision = "Campo agent_use_vision ausente ou deve ser um valor booleano."
+error_setting_agent_max_actions_per_step = "Campo agent_max_actions_per_step ausente ou fora do intervalo permitido."
+error_setting_agent_max_failures = "Campo agent_max_failures ausente ou fora do intervalo permitido."
+error_setting_agent_step_timeout = "Campo agent_step_timeout ausente ou fora do intervalo permitido."
+error_setting_agent_use_thinking = "Campo agent_use_thinking ausente ou deve ser um valor booleano."
+error_setting_agent_calculate_cost = "Campo agent_calculate_cost ausente ou deve ser um valor booleano."
+error_setting_agent_fast_mode = "Campo agent_fast_mode ausente ou deve ser um valor booleano."
+error_setting_agent_demo_mode = "Campo agent_demo_mode ausente ou deve ser um valor booleano."
+
+error_setting_browser_headless = "Campo browser_headless ausente ou deve ser um valor booleano."
+error_setting_browser_enable_security = "Campo browser_enable_security ausente ou deve ser um valor booleano."
+error_setting_browser_use_sandbox = "Campo browser_use_sandbox ausente ou deve ser um valor booleano."
+
+error_task_history_invalid_id = "O id do histórico de tarefa é inválido; ele deve ser um número inteiro positivo."
+
+error_internal_error = "Erro interno do servidor, tente novamente mais tarde ou contate o administrador."

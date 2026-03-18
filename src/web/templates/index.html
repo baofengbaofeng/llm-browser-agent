@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM_Browser_Agent</title>
+
+    <!-- CSS -->
+    <link href="{{ static_url('css/llm_browser_agent.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Top Navbar -->
+        <nav class="top-navbar">
+            <div class="flex items-center">
+                <img src="{{ static_url('images/logo.png') }}" class="logo-img">
+                <span class="logo-divider"></span>
+                <span class="logo-subtitle">&lt;LLM_Browser_Agent&gt;</span>
+            </div>
+            <div class="nav-menu-group">
+                <div class="nav-config-summary">
+                    <span class="config-badge" title="Model">
+                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
+                        </svg>
+                        <span v-text="config.model"></span>
+                    </span>
+                    <span class="config-badge config-toggle" 
+                          :data-enabled="config.use_vision"
+                          @click="toggleConfig('use_vision')"
+                          role="button"
+                          title="Vision">
+                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                        </svg>
+                        <span v-text="translations.BASE_AGENT_VISION"></span>
+                    </span>
+                    <span class="config-badge config-toggle" 
+                          :data-enabled="config.use_thinking"
+                          @click="toggleConfig('use_thinking')"
+                          role="button"
+                          title="Thinking">
+                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                        <span v-text="translations.BASE_AGENT_THINKING_MODE"></span>
+                    </span>
+                    <span class="config-badge config-toggle" 
+                          :data-enabled="config.calculate_cost"
+                          @click="toggleConfig('calculate_cost')"
+                          role="button"
+                          title="Cost">
+                        <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span v-text="translations.BASE_AGENT_CALCULATE_COST"></span>
+                    </span>
+                    <template v-if="showSummary">
+                        <span class="config-badge config-toggle" 
+                              :data-enabled="config.fast_mode"
+                              @click="toggleConfig('fast_mode')"
+                              role="button"
+                              title="Fast Mode">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            <span v-text="translations.BASE_AGENT_FAST_MODE"></span>
+                        </span>
+                        <span class="config-badge config-toggle" 
+                              :data-enabled="config.demo_mode"
+                              @click="toggleConfig('demo_mode')"
+                              role="button"
+                              title="Demo Mode">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                            <span v-text="translations.BASE_AGENT_DEMO_MODE"></span>
+                        </span>
+                        <span class="config-badge config-toggle" 
+                              :data-enabled="config.headless"
+                              @click="toggleConfig('headless')"
+                              role="button"
+                              title="Headless">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                            <span v-text="translations.BASE_BROWSER_HEADLESS_MODE"></span>
+                        </span>
+                        <span class="config-badge config-toggle" 
+                              :data-enabled="config.enable_security"
+                              @click="toggleConfig('enable_security')"
+                              role="button"
+                              title="Security">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                            <span v-text="translations.BASE_BROWSER_SECURITY_MODE"></span>
+                        </span>
+                        <span class="config-badge config-toggle" 
+                              :data-enabled="config.use_sandbox"
+                              @click="toggleConfig('use_sandbox')"
+                              role="button"
+                              title="Sandbox">
+                            <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+                            </svg>
+                            <span v-text="translations.BASE_BROWSER_CHROMIUM_SANDBOX_MODE"></span>
+                        </span>
+                    </template>
+                </div>
+                <button @click="showSummary = !showSummary" class="menu-toggle" :title="translations.VIEW_NAV_CONFIG_SUMMARY_TOGGLE">
+                    <svg class="w-4 h-4 transition-transform" :class="{ 'rotate-180': showSummary }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+                <button @click="showLangPanel = !showLangPanel" class="menu-toggle">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+                    </svg>
+                    <span v-text="translations.VIEW_NAV_LANGUAGE"></span>
+                </button>
+                <button @click="showSettings = !showSettings" class="menu-toggle">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <span v-text="translations.VIEW_NAV_SETTINGS"></span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Language Panel -->
+        <div v-if="showLangPanel" class="settings-offcanvas show">
+            <div class="settings-offcanvas-header">
+                <h5 v-text="translations.VIEW_NAV_LANGUAGE"></h5>
+                <button @click="showLangPanel = false" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="settings-offcanvas-body">
+                <div class="lang-list">
+                    <a v-for="(name, code) in languages" :key="code"
+                       :href="'?lang=' + code"
+                       :class="['lang-item', { 'active': currentLang === code }]"
+                       v-text="name">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Panel -->
+        <div v-if="showSettings" class="settings-offcanvas show">
+            <div class="settings-offcanvas-header">
+                <h5 v-text="translations.VIEW_NAV_SETTINGS"></h5>
+                <button @click="showSettings = false" class="text-gray-500 hover:text-gray-700">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="settings-offcanvas-body">
+                <!-- Model Config -->
+                <div class="settings-section">
+                    <h6 v-text="translations.VIEW_SECTION_MODEL"></h6>
+                    <div class="config-item">
+                        <label class="form-label small" v-text="translations.BASE_MODEL_NAME"></label>
+                        <input v-model="config.model" type="text" class="form-control form-control-sm">
+                    </div>
+                    <div class="config-item">
+                        <label class="form-label small" v-text="translations.BASE_MODEL_API_URL"></label>
+                        <input v-model="config.base_url" type="text" class="form-control form-control-sm">
+                    </div>
+                    <div class="config-item">
+                        <label class="form-label small" v-text="translations.BASE_MODEL_API_KEY"></label>
+                        <div class="flex">
+                            <input v-model="config.api_key" :type="showApiKey ? 'text' : 'password'" class="form-control form-control-sm flex-1">
+                            <button @click="showApiKey = !showApiKey" class="btn btn-sm btn-secondary ml-2"
+                                    v-text="showApiKey ? '隐藏' : '显示'">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="config-item">
+                        <label class="form-label small" v-text="translations.BASE_MODEL_TEMPERATURE"></label>
+                        <input v-model="config.temperature" type="number" step="0.1" min="0" max="2" class="form-control form-control-sm">
+                    </div>
+                </div>
+
+                <!-- Agent Config -->
+                <div class="settings-section">
+                    <h6 v-text="translations.VIEW_SECTION_AGENT"></h6>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div class="config-item">
+                            <label class="form-label small" v-text="translations.BASE_AGENT_MAX_ACTIONS"></label>
+                            <input v-model="config.max_actions_per_step" type="number" min="1" class="form-control form-control-sm">
+                        </div>
+                        <div class="config-item">
+                            <label class="form-label small" v-text="translations.BASE_AGENT_LLM_TIMEOUT"></label>
+                            <input v-model="config.llm_timeout" type="number" min="1" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                    <div class="mt-3 space-y-2">
+                        <label class="flex items-center text-sm">
+                            <input v-model="config.calculate_cost" type="checkbox" class="mr-2">
+                            <span v-text="translations.BASE_AGENT_CALCULATE_COST"></span>
+                        </label>
+                        <label class="flex items-center text-sm">
+                            <input v-model="config.use_vision" type="checkbox" class="mr-2">
+                            <span v-text="translations.BASE_AGENT_VISION"></span>
+                        </label>
+                        <label class="flex items-center text-sm">
+                            <input v-model="config.use_thinking" type="checkbox" class="mr-2">
+                            <span v-text="translations.BASE_AGENT_THINKING_MODE"></span>
+                        </label>
+                        <label class="flex items-center text-sm">
+                            <input v-model="config.fast_mode" type="checkbox" class="mr-2">
+                            <span v-text="translations.BASE_AGENT_FAST_MODE"></span>
+                        </label>
+                        <label class="flex items-center text-sm">
+                            <input v-model="config.demo_mode" type="checkbox" class="mr-2">
+                            <span v-text="translations.BASE_AGENT_DEMO_MODE"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Browser Config -->
+                <div class="settings-section">
+                    <h6 v-text="translations.VIEW_SECTION_BROWSER"></h6>
+                    <div class="space-y-2">
+                        <label class="flex items-center text-sm">
+                            <input v-model="config.headless" type="checkbox" class="mr-2">
+                            <span v-text="translations.BASE_BROWSER_HEADLESS_MODE"></span>
+                        </label>
+                        <label class="flex items-center text-sm">
+                            <input v-model="config.enable_security" type="checkbox" class="mr-2">
+                            <span v-text="translations.BASE_BROWSER_SECURITY_MODE"></span>
+                        </label>
+                        <label class="flex items-center text-sm">
+                            <input v-model="config.use_sandbox" type="checkbox" class="mr-2">
+                            <span v-text="translations.BASE_BROWSER_CHROMIUM_SANDBOX_MODE"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="main-card">
+                <div class="flex h-full">
+                    <!-- Left Panel - Plans -->
+                    <div class="left-panel">
+                        <div class="flex justify-between items-center mb-3 pt-3">
+                            <label class="font-semibold flex items-center">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                                </svg>
+                                <span v-text="translations.VIEW_SECTION_TASK_PLANNING"></span>
+                            </label>
+                            <span class="badge badge-secondary" v-text="plans.length"></span>
+                        </div>
+                        <div class="plan-list">
+                            <div v-if="plans.length === 0" class="text-center py-8 text-gray-400">
+                                <svg class="w-12 h-12 mx-auto mb-2 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"/>
+                                </svg>
+                                <p class="text-sm" v-text="translations.VIEW_TASK_PLANNING_EMPTY_MESSAGE"></p>
+                            </div>
+                            <div v-else class="space-y-2">
+                                <div v-for="plan in plans" :key="plan.id"
+                                     @click="previewPlan(plan)"
+                                     :class="['plan-item', { 'active': selectedPlanId === plan.id }]"
+                                     class="cursor-pointer transition-all">
+                                    <button @click.stop="deletePlan(plan.id, $event)" class="plan-delete">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                                        </svg>
+                                    </button>
+                                    <div class="plan-name" v-text="plan.task_name || (plan.task ? plan.task.substring(0, 30) + '...' : '未命名计划')"></div>
+                                    <div class="plan-time" v-text="formatTime(plan.created_at)"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle Panel - Task Input -->
+                    <div class="mid-panel">
+                        <div class="flex flex-col h-full">
+                            <label class="font-semibold pt-3 mb-3 flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                </svg>
+                                <span v-text="translations.VIEW_TASK_PROMPT"></span>
+                            </label>
+                            <textarea v-model="task"
+                                      @blur="autoNumberLines"
+                                      @keydown.enter.prevent
+                                      class="flex-1 w-full p-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:border-primary text-sm task-textarea"
+                                      placeholder="请输入任务步骤..."></textarea>
+                            <div class="flex justify-center gap-2 mt-3 mb-3">
+                                <button @click="resetTask" class="btn btn-secondary" :disabled="running">
+                                    <svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                    </svg>
+                                    <span v-text="translations.BASE_BUTTON_RESET"></span>
+                                </button>
+                                <button @click="saveTask" class="btn btn-secondary" :disabled="running">
+                                    <svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"/>
+                                    </svg>
+                                    <span v-text="translations.BASE_BUTTON_SAVE"></span>
+                                </button>
+                                <button v-if="!running" @click="runTask" class="btn btn-primary" :disabled="!task || !task.trim()">
+                                    <svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <span v-text="translations.BASE_BUTTON_EXEC"></span>
+                                </button>
+                                <button v-else @click="stopTask" class="btn btn-error">
+                                    <svg class="w-4 h-4 mr-1 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z"/>
+                                    </svg>
+                                    <span v-text="translations.BASE_BUTTON_STOP"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel - Results -->
+                    <div class="right-panel">
+                        <label class="font-semibold mb-3 pt-3 flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span v-text="translations.VIEW_SECTION_TASK_RESPONSE"></span>
+                        </label>
+                        <div class="result-area">
+                            <div v-if="!hasResult" class="flex items-center justify-center h-full text-gray-400">
+                                <span v-text="translations.VIEW_RESULT_PROPOSE_EMPTY"></span>
+                            </div>
+                            <div v-else class="h-full flex flex-col border rounded-lg overflow-hidden">
+                                <div :class="['px-3 py-2 flex justify-between items-center text-xs text-white', resultHeaderClass]">
+                                    <span v-text="resultTitle"></span>
+                                    <span class="bg-white text-gray-800 px-2 py-0.5 rounded" v-text="logMessages.length + ' 条'"></span>
+                                </div>
+                                <div class="flex-1 overflow-hidden">
+                                    <pre class="h-full overflow-y-auto p-3 text-sm font-mono bg-white" v-text="formattedLogs"></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Vue 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- Application Data -->
+    <script>
+        // i18n 将在页面加载后通过 AJAX 获取
+        let i18n = {};
+    </script>
+
+    <!-- Vue Application -->
+    <script src="{{ static_url('js/llm_browser_agent.js') }}"></script>
+</body>
+</html>

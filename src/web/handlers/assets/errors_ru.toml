@@ -1,0 +1,39 @@
+error_body_invalid_json = "Тело запроса не является корректным JSON, проверьте данные и повторите попытку."
+
+error_task_project_invalid_json = "Тело запроса не является корректным JSON, проверьте данные и повторите попытку."
+error_task_project_missing_digest = "В запросе отсутствует поле task_digest или оно пустое."
+error_task_project_invalid_digest = "Поле task_digest недопустимо или превышает допустимую длину."
+error_task_project_missing_prompt = "В запросе отсутствует поле task_prompt или оно пустое."
+error_task_project_invalid_prompt = "Поле task_prompt недопустимо или превышает допустимую длину."
+error_task_project_missing_setting = "Отсутствует поле setting; требуется объект конфигурации задачи."
+error_task_project_invalid_setting = "Поле setting должно быть объектом, содержащим поля конфигурации задачи."
+error_task_project_missing_id = "Отсутствует идентификатор плана задачи id, операция невозможна."
+error_task_project_invalid_id = "Идентификатор плана задачи id недопустим; он должен быть положительным целым числом."
+
+error_param_page_invalid_value = "Параметр пагинации page недопустим или выходит за допустимый диапазон."
+error_param_size_invalid_value = "Параметр пагинации size недопустим или выходит за допустимый диапазон."
+error_param_status_invalid_value = "Параметр запроса status недопустим или выходит за допустимый диапазон."
+
+error_setting_model_name = "Поле model_name отсутствует или недопустимо."
+error_setting_model_temperature = "Поле model_temperature отсутствует или находится вне диапазона 0.0~1.0."
+error_setting_model_top_p = "Поле model_top_p отсутствует или находится вне диапазона 0.0~1.0."
+error_setting_model_api_url = "Поле model_api_url отсутствует или превышает допустимую длину."
+error_setting_model_api_key = "Поле model_api_key отсутствует или превышает допустимую длину."
+error_setting_model_timeout = "Поле model_timeout отсутствует или находится вне допустимого диапазона."
+
+error_setting_agent_use_vision = "Поле agent_use_vision отсутствует или должно быть булевым значением."
+error_setting_agent_max_actions_per_step = "Поле agent_max_actions_per_step отсутствует или вне допустимого диапазона."
+error_setting_agent_max_failures = "Поле agent_max_failures отсутствует или вне допустимого диапазона."
+error_setting_agent_step_timeout = "Поле agent_step_timeout отсутствует или вне допустимого диапазона."
+error_setting_agent_use_thinking = "Поле agent_use_thinking отсутствует или должно быть булевым значением."
+error_setting_agent_calculate_cost = "Поле agent_calculate_cost отсутствует или должно быть булевым значением."
+error_setting_agent_fast_mode = "Поле agent_fast_mode отсутствует или должно быть булевым значением."
+error_setting_agent_demo_mode = "Поле agent_demo_mode отсутствует или должно быть булевым значением."
+
+error_setting_browser_headless = "Поле browser_headless отсутствует или должно быть булевым значением."
+error_setting_browser_enable_security = "Поле browser_enable_security отсутствует или должно быть булевым значением."
+error_setting_browser_use_sandbox = "Поле browser_use_sandbox отсутствует или должно быть булевым значением."
+
+error_task_history_invalid_id = "Идентификатор записи истории задачи недопустим; он должен быть положительным целым числом."
+
+error_internal_error = "Внутренняя ошибка сервера. Повторите попытку позже или свяжитесь с администратором."

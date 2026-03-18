@@ -1,0 +1,81 @@
+# EditorConfig 配置文件: https://EditorConfig.org
+
+# 根配置文件标记
+root = true
+
+# 所有文件通用配置
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Python 文件配置
+[*.py]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# 函数定义参数换行样式
+# 当参数超过一行时，采用以下样式：
+# def function_name(
+#     param1: type,
+#     param2: type,
+#     param3: type
+# ) -> return_type:
+function_definition_params_multiline = true
+function_definition_params_align = false
+
+# 函数调用参数换行样式
+# 当参数超过一行时，采用以下样式：
+# function_name(
+#     arg1,
+#     arg2,
+#     arg3
+# )
+function_call_params_multiline = true
+function_call_params_align = false
+
+# 方法链换行
+# chain.method1()
+#     .method2()
+#     .method3()
+method_chain_break = true
+
+# 括号内换行对齐
+# 采用垂直对齐方式，与首行括号对齐
+bracket_alignment = vertical
+
+# 字典/列表换行
+# 多行字典/列表末尾保留逗号（推荐样式）
+# 示例：
+# data = {
+#     'key1': value1,
+#     'key2': value2,
+# }
+
+# JavaScript 文件配置
+[*.js]
+indent_style = space
+indent_size = 4
+max_line_length = 120
+
+# HTML 文件配置
+[*.html]
+indent_style = space
+indent_size = 4
+
+# CSS 文件配置
+[*.css]
+indent_style = space
+indent_size = 4
+
+# JSON 文件配置
+[*.json]
+indent_style = space
+indent_size = 4
+
+# YAML 文件配置
+[*.{yml,yaml}]
+indent_style = space
+indent_size = 4

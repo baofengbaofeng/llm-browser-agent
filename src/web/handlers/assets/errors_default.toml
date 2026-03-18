@@ -1,0 +1,41 @@
+error_body_invalid_json = "请求体不是合法 JSON 格式，请检查后重试。"
+
+error_task_project_invalid_json = "请求体不是合法 JSON 格式，请检查后重试。"
+error_task_project_missing_digest = "缺少任务摘要字段 task_digest 或内容为空。"
+error_task_project_invalid_digest = "任务摘要 task_digest 格式无效或长度超出限制。"
+error_task_project_missing_prompt = "缺少任务内容字段 task_prompt 或内容为空。"
+error_task_project_invalid_prompt = "任务内容 task_prompt 格式无效或长度超出限制。"
+error_task_project_missing_setting = "缺少 setting 字段，无法创建任务执行配置。"
+error_task_project_invalid_setting = "setting 字段必须为包含任务配置字段的对象。"
+error_task_project_missing_id = "缺少任务计划主键 id，无法执行操作。"
+error_task_project_invalid_id = "任务计划主键 id 非法，必须为大于 0 的整数。"
+
+error_param_page_invalid_value = "分页参数 page 非法或超出允许范围。"
+error_param_size_invalid_value = "分页参数 size 非法或超出允许范围。"
+error_param_status_invalid_value = "查询参数 status 非法或不在允许取值范围内。"
+
+error_setting_model_name = "模型名称 model_name 缺失或格式无效。"
+error_setting_model_temperature = "模型温度 model_temperature 缺失或超出 0.0~1.0 范围。"
+error_setting_model_top_p = "模型核采样参数 model_top_p 缺失或超出 0.0~1.0 范围。"
+error_setting_model_api_url = "模型 API 地址 model_api_url 缺失或长度超限。"
+error_setting_model_api_key = "模型 API 密钥 model_api_key 缺失或长度超限。"
+error_setting_model_timeout = "模型超时时间 model_timeout 缺失或不在允许范围内。"
+
+error_setting_agent_use_vision = "agent_use_vision 字段缺失或类型错误，必须为布尔值。"
+error_setting_agent_max_actions_per_step = "agent_max_actions_per_step 缺失或不在允许范围内。"
+error_setting_agent_max_failures = "agent_max_failures 缺失或不在允许范围内。"
+error_setting_agent_step_timeout = "agent_step_timeout 缺失或不在允许范围内。"
+error_setting_agent_use_thinking = "agent_use_thinking 字段缺失或类型错误，必须为布尔值。"
+error_setting_agent_calculate_cost = "agent_calculate_cost 字段缺失或类型错误，必须为布尔值。"
+error_setting_agent_fast_mode = "agent_fast_mode 字段缺失或类型错误，必须为布尔值。"
+error_setting_agent_demo_mode = "agent_demo_mode 字段缺失或类型错误，必须为布尔值。"
+
+error_setting_browser_headless = "browser_headless 字段缺失或类型错误，必须为布尔值。"
+error_setting_browser_enable_security = "browser_enable_security 字段缺失或类型错误，必须为布尔值。"
+error_setting_browser_use_sandbox = "browser_use_sandbox 字段缺失或类型错误，必须为布尔值。"
+
+error_task_history_invalid_id = "任务历史记录主键 id 非法，必须为大于 0 的整数。"
+
+error_instruct_empty = "请求体缺少 instruction 或内容为空，请提交一段自然语言指令文本。"
+
+error_internal_error = "服务端内部错误，请稍后重试或联系管理员。"

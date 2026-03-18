@@ -1,0 +1,39 @@
+error_body_invalid_json = "請求體不是合法 JSON 格式，請檢查後重試。"
+
+error_task_project_invalid_json = "請求體不是合法 JSON 格式，請檢查後重試。"
+error_task_project_missing_digest = "缺少任務摘要欄位 task_digest 或內容為空。"
+error_task_project_invalid_digest = "任務摘要 task_digest 格式無效或長度超出限制。"
+error_task_project_missing_prompt = "缺少任務內容欄位 task_prompt 或內容為空。"
+error_task_project_invalid_prompt = "任務內容 task_prompt 格式無效或長度超出限制。"
+error_task_project_missing_setting = "缺少 setting 欄位，無法建立任務執行配置。"
+error_task_project_invalid_setting = "setting 欄位必須為包含任務配置欄位的物件。"
+error_task_project_missing_id = "缺少任務計畫主鍵 id，無法執行操作。"
+error_task_project_invalid_id = "任務計畫主鍵 id 非法，必須為大於 0 的整數。"
+
+error_param_page_invalid_value = "分頁參數 page 非法或超出允許範圍。"
+error_param_size_invalid_value = "分頁參數 size 非法或超出允許範圍。"
+error_param_status_invalid_value = "查詢參數 status 非法或超出允許範圍。"
+
+error_setting_model_name = "模型名稱 model_name 缺失或格式無效。"
+error_setting_model_temperature = "模型溫度 model_temperature 缺失或超出 0.0~1.0 範圍。"
+error_setting_model_top_p = "模型核採樣參數 model_top_p 缺失或超出 0.0~1.0 範圍。"
+error_setting_model_api_url = "模型 API 位址 model_api_url 缺失或長度超限。"
+error_setting_model_api_key = "模型 API 金鑰 model_api_key 缺失或長度超限。"
+error_setting_model_timeout = "模型逾時時間 model_timeout 缺失或不在允許範圍內。"
+
+error_setting_agent_use_vision = "agent_use_vision 欄位缺失或型別錯誤，必須為布林值。"
+error_setting_agent_max_actions_per_step = "agent_max_actions_per_step 缺失或不在允許範圍內。"
+error_setting_agent_max_failures = "agent_max_failures 缺失或不在允許範圍內。"
+error_setting_agent_step_timeout = "agent_step_timeout 缺失或不在允許範圍內。"
+error_setting_agent_use_thinking = "agent_use_thinking 欄位缺失或型別錯誤，必須為布林值。"
+error_setting_agent_calculate_cost = "agent_calculate_cost 欄位缺失或型別錯誤，必須為布林值。"
+error_setting_agent_fast_mode = "agent_fast_mode 欄位缺失或型別錯誤，必須為布林值。"
+error_setting_agent_demo_mode = "agent_demo_mode 欄位缺失或型別錯誤，必須為布林值。"
+
+error_setting_browser_headless = "browser_headless 欄位缺失或型別錯誤，必須為布林值。"
+error_setting_browser_enable_security = "browser_enable_security 欄位缺失或型別錯誤，必須為布林值。"
+error_setting_browser_use_sandbox = "browser_use_sandbox 欄位缺失或型別錯誤，必須為布林值。"
+
+error_task_history_invalid_id = "任務歷史記錄主鍵 id 非法，必須為大於 0 的整數。"
+
+error_internal_error = "伺服器內部錯誤，請稍後重試或聯繫管理員。"

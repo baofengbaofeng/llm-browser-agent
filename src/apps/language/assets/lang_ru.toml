@@ -1,0 +1,96 @@
+# Russian (Русский)
+
+# Base Configuration
+base_model_name = "Название Модели"
+base_model_temperature = "Температура"
+base_model_api_url = "URL API"
+base_model_api_key = "Key API"
+base_agent_vision = "Зрение"
+base_agent_max_actions = "Макс Действий на Шаг"
+base_agent_llm_timeout = "Таймаут LLM (сек)"
+base_agent_max_failure = "Лимит Попыток"
+base_agent_step_timeout = "Таймаут Шага (сек)"
+base_agent_thinking_mode = "Режим Размышления"
+base_agent_fast_mode = "Быстрый Режим"
+base_agent_demo_mode = "Демо Режим"
+base_agent_calculate_cost = "Рассчитать Стоимость"
+base_browser_headless_mode = "Headless Режим"
+base_browser_security_mode = "Безопасный Режим"
+base_browser_chromium_sandbox_mode = "Sandbox Режим"
+
+# Base Unit Configuration
+base_unit_times = "раз"
+base_unit_sec = "сек"
+base_unit_row = "записей"
+
+# Base Bool Configuration
+base_bool_y = "Да"
+base_bool_n = "Нет"
+
+# Base Button Configuration
+base_button_exec = "Запустить"
+base_button_save = "Сохранить"
+base_button_stop = "Остановить"
+base_button_insert = "Вставить"
+base_button_cancel = "Отмена"
+base_button_affirm = "Подтвердить"
+base_button_reset = "Сбросить"
+base_button_close = "Закрыть"
+
+# Base Modal Configuration
+base_modal_alert_title = "Уведомление"
+
+# View Nav Configuration
+view_nav_settings = "Настройки"
+view_nav_language = "Язык"
+view_nav_config_summary_toggle = "Показать/Скрыть Сводку"
+
+# View Section Configuration
+view_section_task_response = "Результат"
+view_section_task_planning = "План Выполнения"
+view_section_model = "Конфиг Модели"
+view_section_agent = "Конфиг Агента"
+view_section_browser = "Конфиг Браузера"
+
+# View Settings Configuration
+view_settings_toggle_password = "Показать/Скрыть Пароль"
+view_settings_custom_config_updated_at = "Пользовательская конфиг обновлена"
+view_settings_use_default_config = "Использовать конфиг по умолчанию"
+view_settings_status_recover_ongoing = "Восстановление"
+view_settings_status_recover_success = "Восстановлено"
+view_settings_button_restore_default = "Сбросить"
+
+# View Task Planning Configuration
+view_task_planning_empty_message = "Нет планов выполнения"
+view_task_planning_empty_propose = "Нажмите сохранить для добавления"
+view_task_planning_status_save_ongoing = "Сохранение"
+view_task_planning_status_save_success = "Сохранено"
+view_task_planning_modal_head_show = "Просмотр Плана"
+view_task_planning_modal_head_save = "Сохранить План"
+view_task_planning_modal_task_name = "Название Задачи"
+view_task_planning_modal_task_name_placeholder = "Если пусто, будут использованы первые 50 символов"
+
+# View Task Configuration
+view_task_prompt = "Описание Задачи"
+view_task_placeholder = "Введите шаги выполнения"
+view_task_modal_head_reset_confirm = "Подтвердить Сброс"
+view_task_modal_body_reset_confirm = "Очистить описание? Это действие нельзя отменить"
+
+# View Result Configuration
+view_result_journal_section = "Журнал Выполнения"
+view_result_propose_empty = "Нажмите \"Запустить\" для начала"
+view_result_status_ongoing = "Задача Выполняется"
+view_result_status_success = "Задача Успешна"
+view_result_status_failure = "Задача Неудачна"
+view_result_status_submitted = "Задача Отправлена"
+view_result_status_canceled = "Задача Завершена"
+
+# Validation Error Configuration
+validation_error_empty_task = "Сначала введите описание задачи"
+validation_error_empty_task_content = "Введите содержание описания"
+
+# Error Configuration
+error_network = "Ошибка Сети"
+error_network_with_retry = "Ошибка сети, повторите позже"
+error_task_running_failed = "Задача Неудачна"
+error_getting_default_config = "Не удалось получить конфигурацию"

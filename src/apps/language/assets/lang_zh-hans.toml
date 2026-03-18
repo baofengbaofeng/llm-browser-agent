@@ -1,0 +1,96 @@
+# Default Language (Simplified Chinese)
+
+# Base Configuration
+base_model_name = "模型名称"
+base_model_temperature = "随机因子"
+base_model_api_url = "调用地址"
+base_model_api_key = "调用密钥"
+base_agent_vision = "视觉能力"
+base_agent_max_actions = "单步操作限制"
+base_agent_llm_timeout = "模型超时（秒）"
+base_agent_max_failure = "失败重试限制"
+base_agent_step_timeout = "单步超时（秒）"
+base_agent_thinking_mode = "思考模式"
+base_agent_fast_mode = "快速模式"
+base_agent_demo_mode = "演示模式"
+base_agent_calculate_cost = "计算成本"
+base_browser_headless_mode = "无头模式"
+base_browser_security_mode = "安全模式"
+base_browser_chromium_sandbox_mode = "沙箱模式"
+
+# Base Unit Configuration
+base_unit_times = "次"
+base_unit_sec = "秒"
+base_unit_row = "条"
+
+# Base Bool Configuration
+base_bool_y = "是"
+base_bool_n = "否"
+
+# Base Button Configuration
+base_button_exec = "运行"
+base_button_save = "保存"
+base_button_stop = "终止"
+base_button_insert = "插入"
+base_button_cancel = "取消"
+base_button_affirm = "确认"
+base_button_reset = "重置"
+base_button_close = "关闭"
+
+# Base Modal Configuration
+base_modal_alert_title = "操作提示"
+
+# View Nav Configuration
+view_nav_settings = "运行设置"
+view_nav_language = "切换语言"
+view_nav_config_summary_toggle = "展开/收起配置摘要"
+
+# View Section Configuration
+view_section_task_response = "执行结果"
+view_section_task_planning = "执行计划"
+view_section_model = "模型配置"
+view_section_agent = "代理配置"
+view_section_browser = "浏览器配置"
+
+# View Settings Configuration
+view_settings_toggle_password = "显示/隐藏密码"
+view_settings_custom_config_updated_at = "自定义配置更新于"
+view_settings_use_default_config = "使用默认配置"
+view_settings_status_recover_ongoing = "恢复中"
+view_settings_status_recover_success = "已恢复"
+view_settings_button_restore_default = "恢复默认"
+
+# View Task Planning Configuration
+view_task_planning_empty_message = "暂无执行计划"
+view_task_planning_empty_propose = "点击保存添加"
+view_task_planning_status_save_ongoing = "保存中"
+view_task_planning_status_save_success = "已保存"
+view_task_planning_modal_head_show = "查看执行计划"
+view_task_planning_modal_head_save = "保存执行计划"
+view_task_planning_modal_task_name = "任务名称"
+view_task_planning_modal_task_name_placeholder = "不填写时默认取任务内容前50个字符作为名称"
+
+# View Task Configuration
+view_task_prompt = "任务描述"
+view_task_placeholder = "请输入任务执行步骤描述"
+view_task_modal_head_reset_confirm = "确认重置"
+view_task_modal_body_reset_confirm = "确定要清空任务描述吗？此操作不可恢复"
+
+# View Result Configuration
+view_result_journal_section = "运行日志"
+view_result_propose_empty = "点击「运行」按钮开始执行任务"
+view_result_status_ongoing = "任务执行中"
+view_result_status_success = "任务执行成功"
+view_result_status_failure = "任务执行失败"
+view_result_status_submitted = "任务已提交"
+view_result_status_canceled = "任务已终止"
+
+# Validation Error Configuration
+validation_error_empty_task = "请先输入任务描述"
+validation_error_empty_task_content = "请输入任务描述内容"
+
+# Error Configuration
+error_network = "网络错误"
+error_network_with_retry = "网络错误，请稍后重试"
+error_task_running_failed = "任务执行失败"
+error_getting_default_config = "获取默认配置失败"

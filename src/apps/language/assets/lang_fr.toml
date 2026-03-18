@@ -1,0 +1,96 @@
+# French (Français)
+
+# Base Configuration
+base_model_name = "Nom du Modèle"
+base_model_temperature = "Température"
+base_model_api_url = "URL API"
+base_model_api_key = "Clé API"
+base_agent_vision = "Vision"
+base_agent_max_actions = "Actions Max par Étape"
+base_agent_llm_timeout = "Délai LLM (sec)"
+base_agent_max_failure = "Limite de Tentatives"
+base_agent_step_timeout = "Délai par Étape (sec)"
+base_agent_thinking_mode = "Mode Réflexion"
+base_agent_fast_mode = "Mode Rapide"
+base_agent_demo_mode = "Mode Démo"
+base_agent_calculate_cost = "Calculer Coût"
+base_browser_headless_mode = "Mode Headless"
+base_browser_security_mode = "Mode Sécurisé"
+base_browser_chromium_sandbox_mode = "Mode Sandbox"
+
+# Base Unit Configuration
+base_unit_times = "fois"
+base_unit_sec = "sec"
+base_unit_row = "lignes"
+
+# Base Bool Configuration
+base_bool_y = "Oui"
+base_bool_n = "Non"
+
+# Base Button Configuration
+base_button_exec = "Exécuter"
+base_button_save = "Enregistrer"
+base_button_stop = "Arrêter"
+base_button_insert = "Insérer"
+base_button_cancel = "Annuler"
+base_button_affirm = "Confirmer"
+base_button_reset = "Réinitialiser"
+base_button_close = "Fermer"
+
+# Base Modal Configuration
+base_modal_alert_title = "Notification"
+
+# View Nav Configuration
+view_nav_settings = "Paramètres"
+view_nav_language = "Langue"
+view_nav_config_summary_toggle = "Afficher/Masquer Résumé"
+
+# View Section Configuration
+view_section_task_response = "Résultat"
+view_section_task_planning = "Plan d'Exécution"
+view_section_model = "Config Modèle"
+view_section_agent = "Config Agent"
+view_section_browser = "Config Navigateur"
+
+# View Settings Configuration
+view_settings_toggle_password = "Afficher/Masquer Mot de Passe"
+view_settings_custom_config_updated_at = "Config personnalisée mise à jour"
+view_settings_use_default_config = "Utiliser config par défaut"
+view_settings_status_recover_ongoing = "Récupération"
+view_settings_status_recover_success = "Récupéré"
+view_settings_button_restore_default = "Réinitialiser"
+
+# View Task Planning Configuration
+view_task_planning_empty_message = "Aucun plan d'exécution"
+view_task_planning_empty_propose = "Cliquez sur enregistrer pour ajouter"
+view_task_planning_status_save_ongoing = "Enregistrement"
+view_task_planning_status_save_success = "Enregistré"
+view_task_planning_modal_head_show = "Voir Plan"
+view_task_planning_modal_head_save = "Enregistrer Plan"
+view_task_planning_modal_task_name = "Nom de Tâche"
+view_task_planning_modal_task_name_placeholder = "Si vide, les 50 premiers caractères seront utilisés"
+
+# View Task Configuration
+view_task_prompt = "Description de Tâche"
+view_task_placeholder = "Entrez les étapes"
+view_task_modal_head_reset_confirm = "Confirmer Réinitialisation"
+view_task_modal_body_reset_confirm = "Effacer la description? Cette action est irréversible"
+
+# View Result Configuration
+view_result_journal_section = "Journal"
+view_result_propose_empty = "Cliquez sur \"Exécuter\" pour démarrer"
+view_result_status_ongoing = "Tâche en Cours"
+view_result_status_success = "Tâche Réussie"
+view_result_status_failure = "Tâche Échouée"
+view_result_status_submitted = "Tâche Soumise"
+view_result_status_canceled = "Tâche Terminée"
+
+# Validation Error Configuration
+validation_error_empty_task = "Veuillez d'abord entrer la description"
+validation_error_empty_task_content = "Veuillez entrer le contenu"
+
+# Error Configuration
+error_network = "Erreur Réseau"
+error_network_with_retry = "Erreur réseau, réessayez plus tard"
+error_task_running_failed = "Tâche Échouée"
+error_getting_default_config = "Échec de récupération de la config"

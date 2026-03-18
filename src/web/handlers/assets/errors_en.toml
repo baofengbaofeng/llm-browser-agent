@@ -1,0 +1,41 @@
+error_body_invalid_json = "Request body is not valid JSON, please check and try again."
+
+error_task_project_invalid_json = "Request body is not valid JSON, please check and try again."
+error_task_project_missing_digest = "Missing or empty task_digest field in the request."
+error_task_project_invalid_digest = "Field task_digest is invalid or exceeds allowed length."
+error_task_project_missing_prompt = "Missing or empty task_prompt field in the request."
+error_task_project_invalid_prompt = "Field task_prompt is invalid or exceeds allowed length."
+error_task_project_missing_setting = "Missing setting field; task configuration object is required."
+error_task_project_invalid_setting = "Field setting must be an object with task configuration fields."
+error_task_project_missing_id = "Task project id is missing, unable to proceed."
+error_task_project_invalid_id = "Task project id is invalid; it must be a positive integer."
+
+error_param_page_invalid_value = "Page parameter page is invalid or out of allowed range."
+error_param_size_invalid_value = "Page parameter size is invalid or out of allowed range."
+error_param_status_invalid_value = "Query parameter status is invalid or not in the allowed value set."
+
+error_setting_model_name = "Field model_name is missing or invalid."
+error_setting_model_temperature = "Field model_temperature is missing or out of range 0.0~1.0."
+error_setting_model_top_p = "Field model_top_p is missing or out of range 0.0~1.0."
+error_setting_model_api_url = "Field model_api_url is missing or exceeds allowed length."
+error_setting_model_api_key = "Field model_api_key is missing or exceeds allowed length."
+error_setting_model_timeout = "Field model_timeout is missing or out of the allowed range."
+
+error_setting_agent_use_vision = "Field agent_use_vision is missing or must be a boolean value."
+error_setting_agent_max_actions_per_step = "Field agent_max_actions_per_step is missing or out of range."
+error_setting_agent_max_failures = "Field agent_max_failures is missing or out of range."
+error_setting_agent_step_timeout = "Field agent_step_timeout is missing or out of range."
+error_setting_agent_use_thinking = "Field agent_use_thinking is missing or must be a boolean value."
+error_setting_agent_calculate_cost = "Field agent_calculate_cost is missing or must be a boolean value."
+error_setting_agent_fast_mode = "Field agent_fast_mode is missing or must be a boolean value."
+error_setting_agent_demo_mode = "Field agent_demo_mode is missing or must be a boolean value."
+
+error_setting_browser_headless = "Field browser_headless is missing or must be a boolean value."
+error_setting_browser_enable_security = "Field browser_enable_security is missing or must be a boolean value."
+error_setting_browser_use_sandbox = "Field browser_use_sandbox is missing or must be a boolean value."
+
+error_task_history_invalid_id = "Task history id is invalid; it must be a positive integer."
+
+error_instruct_empty = "Request body is missing instruction or it is empty; please send a natural language instruction."
+
+error_internal_error = "Internal server error, please try again later or contact the administrator."

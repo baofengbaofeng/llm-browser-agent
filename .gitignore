@@ -1,0 +1,17 @@
+/.idea/
+/.venv/
+/.data/
+/.pytest_cache/
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+/llm_browser_agent.db
+/llm_browser_agent.db-shm
+/llm_browser_agent.db-wal
+
+/.lingma/
+/.cursor/

@@ -1,0 +1,39 @@
+error_body_invalid_json = "Le corps de la requête n'est pas un JSON valide, veuillez vérifier et réessayer."
+
+error_task_project_invalid_json = "Le corps de la requête n'est pas un JSON valide, veuillez vérifier et réessayer."
+error_task_project_missing_digest = "Le champ task_digest est manquant ou vide dans la requête."
+error_task_project_invalid_digest = "Le champ task_digest est invalide ou dépasse la longueur autorisée."
+error_task_project_missing_prompt = "Le champ task_prompt est manquant ou vide dans la requête."
+error_task_project_invalid_prompt = "Le champ task_prompt est invalide ou dépasse la longueur autorisée."
+error_task_project_missing_setting = "Le champ setting est manquant ; un objet de configuration de tâche est requis."
+error_task_project_invalid_setting = "Le champ setting doit être un objet contenant les champs de configuration de la tâche."
+error_task_project_missing_id = "L'identifiant du plan de tâche id est manquant, impossible de continuer."
+error_task_project_invalid_id = "L'identifiant du plan de tâche id est invalide ; il doit être un entier positif."
+
+error_param_page_invalid_value = "Le paramètre de pagination page est invalide ou hors de la plage autorisée."
+error_param_size_invalid_value = "Le paramètre de pagination size est invalide ou hors de la plage autorisée."
+error_param_status_invalid_value = "Le paramètre de requête status est invalide ou hors de la plage autorisée."
+
+error_setting_model_name = "Le champ model_name est manquant ou invalide."
+error_setting_model_temperature = "Le champ model_temperature est manquant ou hors de l'intervalle 0.0~1.0."
+error_setting_model_top_p = "Le champ model_top_p est manquant ou hors de l'intervalle 0.0~1.0."
+error_setting_model_api_url = "Le champ model_api_url est manquant ou dépasse la longueur autorisée."
+error_setting_model_api_key = "Le champ model_api_key est manquant ou dépasse la longueur autorisée."
+error_setting_model_timeout = "Le champ model_timeout est manquant ou hors de l'intervalle autorisé."
+
+error_setting_agent_use_vision = "Le champ agent_use_vision est manquant ou doit être une valeur booléenne."
+error_setting_agent_max_actions_per_step = "Le champ agent_max_actions_per_step est manquant ou hors de l'intervalle autorisé."
+error_setting_agent_max_failures = "Le champ agent_max_failures est manquant ou hors de l'intervalle autorisé."
+error_setting_agent_step_timeout = "Le champ agent_step_timeout est manquant ou hors de l'intervalle autorisé."
+error_setting_agent_use_thinking = "Le champ agent_use_thinking est manquant ou doit être une valeur booléenne."
+error_setting_agent_calculate_cost = "Le champ agent_calculate_cost est manquant ou doit être une valeur booléenne."
+error_setting_agent_fast_mode = "Le champ agent_fast_mode est manquant ou doit être une valeur booléenne."
+error_setting_agent_demo_mode = "Le champ agent_demo_mode est manquant ou doit être une valeur booléenne."
+
+error_setting_browser_headless = "Le champ browser_headless est manquant ou doit être une valeur booléenne."
+error_setting_browser_enable_security = "Le champ browser_enable_security est manquant ou doit être une valeur booléenne."
+error_setting_browser_use_sandbox = "Le champ browser_use_sandbox est manquant ou doit être une valeur booléenne."
+
+error_task_history_invalid_id = "L'identifiant de l'historique de tâche est invalide ; il doit être un entier positif."
+
+error_internal_error = "Erreur interne du serveur, veuillez réessayer plus tard ou contacter l'administrateur."

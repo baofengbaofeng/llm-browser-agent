@@ -1,0 +1,96 @@
+# Japanese (日本語)
+
+# Base Configuration
+base_model_name = "モデル名"
+base_model_temperature = "隨機因子"
+base_model_api_url = "API URL"
+base_model_api_key = "API Key"
+base_agent_vision = "視覚能力"
+base_agent_max_actions = "ステップあたり最大アクション数"
+base_agent_llm_timeout = "LLMタイムアウト（秒）"
+base_agent_max_failure = "最大再試行回数"
+base_agent_step_timeout = "ステップタイムアウト（秒）"
+base_agent_thinking_mode = "思考モード"
+base_agent_fast_mode = "高速モード"
+base_agent_demo_mode = "デモモード"
+base_agent_calculate_cost = "コスト計算"
+base_browser_headless_mode = "ヘッドレスモード"
+base_browser_security_mode = "セキュリティモード"
+base_browser_chromium_sandbox_mode = "サンドボックスモード"
+
+# Base Unit Configuration
+base_unit_times = "回"
+base_unit_sec = "秒"
+base_unit_row = "件"
+
+# Base Bool Configuration
+base_bool_y = "はい"
+base_bool_n = "いいえ"
+
+# Base Button Configuration
+base_button_exec = "実行"
+base_button_save = "保存"
+base_button_stop = "停止"
+base_button_insert = "挿入"
+base_button_cancel = "キャンセル"
+base_button_affirm = "確認"
+base_button_reset = "リセット"
+base_button_close = "閉じる"
+
+# Base Modal Configuration
+base_modal_alert_title = "通知"
+
+# View Nav Configuration
+view_nav_settings = "設定"
+view_nav_language = "言語"
+view_nav_config_summary_toggle = "設定概要の表示/非表示"
+
+# View Section Configuration
+view_section_task_response = "実行結果"
+view_section_task_planning = "実行計画"
+view_section_model = "モデル設定"
+view_section_agent = "エージェント設定"
+view_section_browser = "ブラウザ設定"
+
+# View Settings Configuration
+view_settings_toggle_password = "パスワードの表示/非表示"
+view_settings_custom_config_updated_at = "カスタム設定更新日時"
+view_settings_use_default_config = "デフォルト設定を使用"
+view_settings_status_recover_ongoing = "復元中"
+view_settings_status_recover_success = "復元完了"
+view_settings_button_restore_default = "デフォルトに戻す"
+
+# View Task Planning Configuration
+view_task_planning_empty_message = "実行計画がありません"
+view_task_planning_empty_propose = "保存をクリックして追加"
+view_task_planning_status_save_ongoing = "保存中"
+view_task_planning_status_save_success = "保存完了"
+view_task_planning_modal_head_show = "計画を表示"
+view_task_planning_modal_head_save = "計画を保存"
+view_task_planning_modal_task_name = "タスク名"
+view_task_planning_modal_task_name_placeholder = "未入力時はタスク内容の先頭50文字を名前として使用"
+
+# View Task Configuration
+view_task_prompt = "タスク説明"
+view_task_placeholder = "タスク実行手順を入力してください"
+view_task_modal_head_reset_confirm = "リセット確認"
+view_task_modal_body_reset_confirm = "タスク説明をクリアしますか？この操作は元に戻せません"
+
+# View Result Configuration
+view_result_journal_section = "実行ログ"
+view_result_propose_empty = "「実行」ボタンをクリックしてタスクを開始"
+view_result_status_ongoing = "タスク実行中"
+view_result_status_success = "タスク成功"
+view_result_status_failure = "タスク失敗"
+view_result_status_submitted = "タスク送信済み"
+view_result_status_canceled = "タスク終了"
+
+# Validation Error Configuration
+validation_error_empty_task = "先にタスク説明を入力してください"
+validation_error_empty_task_content = "タスク説明内容を入力してください"
+
+# Error Configuration
+error_network = "ネットワークエラー"
+error_network_with_retry = "ネットワークエラー、後でもう一度お試しください"
+error_task_running_failed = "タスク失敗"
+error_getting_default_config = "デフォルト設定の取得に失敗"

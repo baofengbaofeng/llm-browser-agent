@@ -1,0 +1,39 @@
+error_body_invalid_json = "リクエストボディが有効なJSON形式ではありません。内容を確認して再試行してください。"
+
+error_task_project_invalid_json = "リクエストボディが有効なJSON形式ではありません。内容を確認して再試行してください。"
+error_task_project_missing_digest = "リクエストに task_digest フィールドが存在しないか、空になっています。"
+error_task_project_invalid_digest = "task_digest フィールドが無効か、許可された長さを超えています。"
+error_task_project_missing_prompt = "リクエストに task_prompt フィールドが存在しないか、空になっています。"
+error_task_project_invalid_prompt = "task_prompt フィールドが無効か、許可された長さを超えています。"
+error_task_project_missing_setting = "setting フィールドが存在しません。タスク設定オブジェクトが必要です。"
+error_task_project_invalid_setting = "setting フィールドはタスク設定フィールドを含むオブジェクトでなければなりません。"
+error_task_project_missing_id = "タスク計画の主キー id が不足しているため、処理を続行できません。"
+error_task_project_invalid_id = "タスク計画の主キー id が無効です。0 より大きい整数である必要があります。"
+
+error_param_page_invalid_value = "ページネーションパラメータ page が無効、または許可された範囲外です。"
+error_param_size_invalid_value = "ページネーションパラメータ size が無効、または許可された範囲外です。"
+error_param_status_invalid_value = "クエリパラメータ status が無効、または許可された範囲外です。"
+
+error_setting_model_name = "model_name フィールドが欠落しているか、無効です。"
+error_setting_model_temperature = "model_temperature フィールドが欠落しているか、0.0〜1.0 の範囲外です。"
+error_setting_model_top_p = "model_top_p フィールドが欠落しているか、0.0〜1.0 の範囲外です。"
+error_setting_model_api_url = "model_api_url フィールドが欠落しているか、長さが許可範囲を超えています。"
+error_setting_model_api_key = "model_api_key フィールドが欠落しているか、長さが許可範囲を超えています。"
+error_setting_model_timeout = "model_timeout フィールドが欠落しているか、許可された範囲外です。"
+
+error_setting_agent_use_vision = "agent_use_vision フィールドが欠落しているか、真偽値でなければなりません。"
+error_setting_agent_max_actions_per_step = "agent_max_actions_per_step フィールドが欠落しているか、許可範囲外です。"
+error_setting_agent_max_failures = "agent_max_failures フィールドが欠落しているか、許可範囲外です。"
+error_setting_agent_step_timeout = "agent_step_timeout フィールドが欠落しているか、許可範囲外です。"
+error_setting_agent_use_thinking = "agent_use_thinking フィールドが欠落しているか、真偽値でなければなりません。"
+error_setting_agent_calculate_cost = "agent_calculate_cost フィールドが欠落しているか、真偽値でなければなりません。"
+error_setting_agent_fast_mode = "agent_fast_mode フィールドが欠落しているか、真偽値でなければなりません。"
+error_setting_agent_demo_mode = "agent_demo_mode フィールドが欠落しているか、真偽値でなければなりません。"
+
+error_setting_browser_headless = "browser_headless フィールドが欠落しているか、真偽値でなければなりません。"
+error_setting_browser_enable_security = "browser_enable_security フィールドが欠落しているか、真偽値でなければなりません。"
+error_setting_browser_use_sandbox = "browser_use_sandbox フィールドが欠落しているか、真偽値でなければなりません。"
+
+error_task_history_invalid_id = "タスク履歴のIDが無効です。0 より大きい整数である必要があります。"
+
+error_internal_error = "サーバー内部エラーが発生しました。しばらくしてから再試行するか、管理者に連絡してください。"

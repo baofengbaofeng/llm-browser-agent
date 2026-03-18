@@ -1,0 +1,96 @@
+# English
+
+# Base Configuration
+base_model_name = "Model Name"
+base_model_temperature = "Temperature"
+base_model_api_url = "API URL"
+base_model_api_key = "API Key"
+base_agent_vision = "Vision"
+base_agent_max_actions = "Max Actions Per Step"
+base_agent_llm_timeout = "LLM Timeout (sec)"
+base_agent_max_failure = "Max Retry Limit"
+base_agent_step_timeout = "Step Timeout (sec)"
+base_agent_thinking_mode = "Thinking Mode"
+base_agent_fast_mode = "Fast Mode"
+base_agent_demo_mode = "Demo Mode"
+base_agent_calculate_cost = "Calculate Cost"
+base_browser_headless_mode = "Headless Mode"
+base_browser_security_mode = "Security Mode"
+base_browser_chromium_sandbox_mode = "Sandbox Mode"
+
+# Base Unit Configuration
+base_unit_times = "times"
+base_unit_sec = "sec"
+base_unit_row = "rows"
+
+# Base Bool Configuration
+base_bool_y = "Yes"
+base_bool_n = "No"
+
+# Base Button Configuration
+base_button_exec = "Run"
+base_button_save = "Save"
+base_button_stop = "Stop"
+base_button_insert = "Insert"
+base_button_cancel = "Cancel"
+base_button_affirm = "Confirm"
+base_button_reset = "Reset"
+base_button_close = "Close"
+
+# Base Modal Configuration
+base_modal_alert_title = "Notification"
+
+# View Nav Configuration
+view_nav_settings = "Settings"
+view_nav_language = "Language"
+view_nav_config_summary_toggle = "Toggle Config Summary"
+
+# View Section Configuration
+view_section_task_response = "Result"
+view_section_task_planning = "Execution Plan"
+view_section_model = "Model Config"
+view_section_agent = "Agent Config"
+view_section_browser = "Browser Config"
+
+# View Settings Configuration
+view_settings_toggle_password = "Show/Hide Password"
+view_settings_custom_config_updated_at = "Custom config updated at"
+view_settings_use_default_config = "Use default config"
+view_settings_status_recover_ongoing = "Recovering"
+view_settings_status_recover_success = "Recovered"
+view_settings_button_restore_default = "Restore Default"
+
+# View Task Planning Configuration
+view_task_planning_empty_message = "No execution plans"
+view_task_planning_empty_propose = "Click save to add"
+view_task_planning_status_save_ongoing = "Saving"
+view_task_planning_status_save_success = "Saved"
+view_task_planning_modal_head_show = "View Plan"
+view_task_planning_modal_head_save = "Save Plan"
+view_task_planning_modal_task_name = "Task Name"
+view_task_planning_modal_task_name_placeholder = "If empty, first 50 chars of task will be used as name"
+
+# View Task Configuration
+view_task_prompt = "Task Description"
+view_task_placeholder = "Enter task execution steps"
+view_task_modal_head_reset_confirm = "Confirm Reset"
+view_task_modal_body_reset_confirm = "Clear task description? This cannot be undone"
+
+# View Result Configuration
+view_result_journal_section = "Execution Log"
+view_result_propose_empty = "Click \"Run\" button to start task"
+view_result_status_ongoing = "Task Running"
+view_result_status_success = "Task Success"
+view_result_status_failure = "Task Failed"
+view_result_status_submitted = "Task Submitted"
+view_result_status_canceled = "Task Terminated"
+
+# Validation Error Configuration
+validation_error_empty_task = "Please enter task description first"
+validation_error_empty_task_content = "Please enter task description content"
+
+# Error Configuration
+error_network = "Network Error"
+error_network_with_retry = "Network error, please retry later"
+error_task_running_failed = "Task Failed"
+error_getting_default_config = "Failed to get default config"

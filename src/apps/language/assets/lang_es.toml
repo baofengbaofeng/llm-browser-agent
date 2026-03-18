@@ -1,0 +1,96 @@
+# Spanish (Español)
+
+# Base Configuration
+base_model_name = "Nombre del Modelo"
+base_model_temperature = "Temperatura"
+base_model_api_url = "URL de API"
+base_model_api_key = "Clave de API"
+base_agent_vision = "Visión"
+base_agent_max_actions = "Acciones Máximas por Paso"
+base_agent_llm_timeout = "Tiempo de Espera LLM (seg)"
+base_agent_max_failure = "Límite de Reintentos"
+base_agent_step_timeout = "Tiempo de Espera por Paso (seg)"
+base_agent_thinking_mode = "Modo de Pensamiento"
+base_agent_fast_mode = "Modo Rápido"
+base_agent_demo_mode = "Modo Demo"
+base_agent_calculate_cost = "Calcular Costo"
+base_browser_headless_mode = "Modo Headless"
+base_browser_security_mode = "Modo Seguro"
+base_browser_chromium_sandbox_mode = "Modo Sandbox"
+
+# Base Unit Configuration
+base_unit_times = "veces"
+base_unit_sec = "seg"
+base_unit_row = "registros"
+
+# Base Bool Configuration
+base_bool_y = "Sí"
+base_bool_n = "No"
+
+# Base Button Configuration
+base_button_exec = "Ejecutar"
+base_button_save = "Guardar"
+base_button_stop = "Detener"
+base_button_insert = "Insertar"
+base_button_cancel = "Cancelar"
+base_button_affirm = "Confirmar"
+base_button_reset = "Restablecer"
+base_button_close = "Cerrar"
+
+# Base Modal Configuration
+base_modal_alert_title = "Notificación"
+
+# View Nav Configuration
+view_nav_settings = "Configuración"
+view_nav_language = "Idioma"
+view_nav_config_summary_toggle = "Mostrar/Ocultar Resumen"
+
+# View Section Configuration
+view_section_task_response = "Resultado"
+view_section_task_planning = "Plan de Ejecución"
+view_section_model = "Config del Modelo"
+view_section_agent = "Config del Agente"
+view_section_browser = "Config del Navegador"
+
+# View Settings Configuration
+view_settings_toggle_password = "Mostrar/Ocultar Contraseña"
+view_settings_custom_config_updated_at = "Config personalizada actualizada"
+view_settings_use_default_config = "Usar configuración predeterminada"
+view_settings_status_recover_ongoing = "Recuperando"
+view_settings_status_recover_success = "Recuperado"
+view_settings_button_restore_default = "Restablecer Predeterminado"
+
+# View Task Planning Configuration
+view_task_planning_empty_message = "No hay planes de ejecución"
+view_task_planning_empty_propose = "Haga clic en guardar para agregar"
+view_task_planning_status_save_ongoing = "Guardando"
+view_task_planning_status_save_success = "Guardado"
+view_task_planning_modal_head_show = "Ver Plan"
+view_task_planning_modal_head_save = "Guardar Plan"
+view_task_planning_modal_task_name = "Nombre de Tarea"
+view_task_planning_modal_task_name_placeholder = "Si está vacío, se usarán los primeros 50 caracteres"
+
+# View Task Configuration
+view_task_prompt = "Descripción de Tarea"
+view_task_placeholder = "Ingrese los pasos de ejecución"
+view_task_modal_head_reset_confirm = "Confirmar Restablecimiento"
+view_task_modal_body_reset_confirm = "¿Borrar descripción? Esta acción no se puede deshacer"
+
+# View Result Configuration
+view_result_journal_section = "Registro de Ejecución"
+view_result_propose_empty = "Haga clic en \"Ejecutar\" para iniciar"
+view_result_status_ongoing = "Ejecutando Tarea"
+view_result_status_success = "Tarea Exitosa"
+view_result_status_failure = "Tarea Fallida"
+view_result_status_submitted = "Tarea Enviada"
+view_result_status_canceled = "Tarea Terminada"
+
+# Validation Error Configuration
+validation_error_empty_task = "Primero ingrese la descripción"
+validation_error_empty_task_content = "Ingrese el contenido de la descripción"
+
+# Error Configuration
+error_network = "Error de Red"
+error_network_with_retry = "Error de red, intente más tarde"
+error_task_running_failed = "Tarea Fallida"
+error_getting_default_config = "Error al obtener configuración"
